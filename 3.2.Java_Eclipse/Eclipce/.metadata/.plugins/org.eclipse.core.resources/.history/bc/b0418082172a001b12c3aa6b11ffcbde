@@ -1,0 +1,73 @@
+
+public class Ocacionales extends Docentes{
+	
+	private  int mesesContrato;
+	private double valorContrato;
+	
+	
+	//public Ocacionales(int funcionario, String nombres, String apellidos, char genero, double salarioBase,
+			//String areaFormacion, String tituloProfesional, double valorContrato, int mesesContrato) {
+		//super(funcionario, nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		//this.mesesContrato = mesesContrato;
+		//this.valorContrato = valorContrato;
+	//}
+
+	public Ocacionales(int idFuncionario, String nombres, String apellidos, char genero, double valorContrato,
+			int mesesContrato, double salarioBase) {
+		super(getFuncionario(), nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		this.mesesContrato = mesesContrato;
+		this.valorContrato = valorContrato;
+	}
+		
+	}
+
+	public int getMesesContrato() {
+		return mesesContrato;
+	}
+
+
+	public void setMesesContrato(int mesesContrato) {
+		this.mesesContrato = mesesContrato;
+	}
+
+
+	public double getValorContrato() {
+		return valorContrato;
+	}
+
+
+	public void setValorContrato(double valorContrato) {
+		this.valorContrato = valorContrato;
+	}
+	
+	//-----------------------------------------------------------------------------------------------------
+	
+		public double calcularSueldo(double valorContrato, int meses) {
+			double pago = 0;
+			pago = valorContrato * meses;
+			return pago;
+			
+		}
+		
+		public String mostrarDatosDocente() {
+			String cad = super.mostrarDatosDocente();
+			cad = cad +"\nMeses del contrato: "+mesesContrato;
+			cad = cad +"\n:Valor del contrato: "+valorContrato;
+			return cad;
+			
+		}
+		
+		public double mostrarLiquidacion(double valorDevengado, double aporteSalud, double aportePension) {
+			double pagoNeto = 0;
+			pagoNeto = valorDevengado-aporteSalud-aportePension;
+			return pagoNeto;
+			
+		}
+
+
+		public static void setValueAt(int funcionario, int i, int j) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+}

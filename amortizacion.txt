@@ -1,0 +1,40 @@
+double amortizacion[][] = new double[periodos+1][5];
+				
+				for( int i=0; i<=periodos; i++) {
+					amortizacion[i][0] = i;
+					TablaAmortizacion.setValueAt(amortizacion[i][0], i, 0);
+				}
+				
+				amortizacion[0][1] = financiamiento;
+				amortizacion[0][2] = 0;
+				amortizacion[0][3] = 0;
+				amortizacion[0][4] = 0;
+				amortizacion[1][1] = financiamiento;
+				
+				TablaAmortizacion.setValueAt(amortizacion[0][1], 0, 1);
+				TablaAmortizacion.setValueAt(amortizacion[0][2], 0, 2);
+				TablaAmortizacion.setValueAt(amortizacion[0][3], 0, 3);
+				TablaAmortizacion.setValueAt(amortizacion[0][4], 0, 4);
+				TablaAmortizacion.setValueAt(amortizacion[1][1], 1, 1);
+				
+				for( int i=1; i<=periodos; i++) {
+					amortizacion[i][2] = pago;
+					TablaAmortizacion.setValueAt(amortizacion[i][2], i, 2);
+				}
+				
+				
+
+				for( int i=2; i<=periodos; i++) {
+					amortizacion[i][1] = amortizacion[i-1][1]-pago;
+					TablaAmortizacion.setValueAt(amortizacion[i][1], i, 1);
+				}
+			
+				for( int i=1; i<=periodos; i++) {
+					amortizacion[i][3] = amortizacion[i][1]*interes;
+					TablaAmortizacion.setValueAt(amortizacion[i][3], i, 3);
+				}
+				
+				for( int i=1; i<=periodos; i++) {
+					amortizacion[i][4] = pago+amortizacion[i][3];
+					TablaAmortizacion.setValueAt(amortizacion[i][4], i, 4);
+				}

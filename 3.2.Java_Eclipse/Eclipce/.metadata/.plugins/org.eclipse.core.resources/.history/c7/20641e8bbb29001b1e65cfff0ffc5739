@@ -1,0 +1,90 @@
+
+public class Funcionario {
+	
+	protected int idFuncionario;
+	protected String nombres;
+	protected String apellidos;
+	protected char genero;
+	protected double salarioBase;
+	
+	
+	public Funcionario(int idFuncionario, String nombres, String apellidos, char genero, double salarioBase) {
+		this.idFuncionario = idFuncionario;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.genero = genero;
+		this.salarioBase = salarioBase;
+	}
+
+
+	public int getFuncionario() {
+		return idFuncionario;
+	}
+
+
+	public void setFuncionario(int funcionario) {
+		this.idFuncionario = funcionario;
+	}
+
+
+	public String getNombres() {
+		return nombres;
+	}
+
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+
+	public char getGenero() {
+		return genero;
+	}
+
+
+	public void setGenero(char genero) {
+		this.genero = genero;
+	}
+
+
+	public double getSalarioBase() {
+		return salarioBase;
+	}
+
+
+	public void setSalarioBase(double salarioBase) {
+		this.salarioBase = salarioBase;
+	}
+	
+	//-----------------------------------------------------------
+	
+	public double calcularEPS(double valorDevengado) {
+		double aporteSalud=0;
+		aporteSalud=valorDevengado*0.04;
+		return aporteSalud;
+		
+	}
+	
+	public double calcularPension(double valorDevengado) {
+		double aportePension=0;
+		aportePension=valorDevengado*0.04;
+		return aportePension;
+	}
+	
+	public double calcularAuxilio(double valorDevengado) {
+		double auxilio=0;
+		return auxilio;
+	}
+		
+	
+}

@@ -1,0 +1,55 @@
+//Ejemplo 4.16
+//La cadena de tiendas de autoservicio  “El mandilón” cuenta con sucursales en C ciudades diferentes
+//de la República, en cada ciudad cuenta con T tiendas y cada tienda cuenta con N empleados,
+//asimismo, cada una registra lo que vende de manera individual cada empleado, 
+//cuánto fue lo que vendió cada tienda, cuánto se vendió en cada ciudad
+//y cuánto recaudó la cadena en un solo día.
+//Realice un algoritmo para determinar lo anterior 
+
+Proceso VentaTienddas
+	tvc<-0;
+	
+	Escribir "ingrese el numero de ciudades las cuales pertenecen a la cadena:  ";
+	Leer nc;
+	
+	//Ciclo el cual lleva la cuenta de las ciudades en las cuales existen tiendas de la cadena 
+	
+	Para i<-1 Hasta nc Con Paso 1 Hacer
+		tvt<-0;
+		
+		Escribir "ingrese el número de tiendas que estan al servicio de la Ciudad:  ",i;
+		Leer nt;
+		
+		//Ciclo el cual lleva la cuenta del numero de  tiendas por cada ciudad 
+		
+		Para j<-1 Hasta nt Con Paso 1 Hacer
+			tve<-0;
+			
+			Escribir "ingrese el numero de empleados por tienda en la ciudad ",j;
+			Leer ne;
+			
+			//Ciclo el cual lleva el numero de empleados por cada tienda
+			
+			Para k<-1 Hasta ne Con Paso 1 Hacer
+				
+				Escribir "ingrese el numero de ventas realizadas por el empleado",k;
+				Leer nv;
+				tve<-tve+nv;
+			FinPara
+			Escribir "las ventas totales hechas por los  empleados en la tienda ",j,"son",tve;
+			
+			tvt<-tvt+tve;
+			
+			
+		FinPara
+		
+		Escribir "las ventas totales por la tienda en la ciudad  ",i,"son",tvt;
+		
+		tvc<-tvc+tvt;
+		
+	FinPara
+	
+	Escribir "las ventas totales en la ciudad ",i,"es",tvc;
+	
+	
+FinProceso

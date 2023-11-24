@@ -1,0 +1,20 @@
+//Ejemplo 4.14
+//Una empresa les paga a sus empleados con base en las horas trabajadas en la semana.
+//Realice un algoritmo para determinar el sueldo semanal de N trabajadores y, además,
+//calcule cuánto pagó la empresa por los N empleados. Represéntelo mediante diagrama de flujo, pseudocódigo 
+Proceso EmpleadosPago
+	Escribir "ingres el numero de empleados: ";
+	Leer ne;
+	Para i<-1 Hasta ne Con Paso 1 Hacer
+		ptt<-0;
+		Escribir "ingrese el pago por hora:  ";
+		Leer ph;
+		Escribir "ingrese las horas trabajadas:  ";
+		Leer ht;
+		ss<-ht*ph;
+		Escribir "el sueldo semanal del empleado:  ",i,"es: ",ss;
+		ptt<-ptt+ss;
+	FinPara
+	Escribir "el pago total por los n trabajadores es:   ",ptt;
+	
+FinProceso

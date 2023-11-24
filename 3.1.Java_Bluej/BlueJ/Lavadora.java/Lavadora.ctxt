@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Lavadora
+comment1.params=m\ v
+comment1.target=Lavadora(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ lavar()
+comment3.params=
+comment3.target=void\ secar()
+comment4.params=
+comment4.target=java.lang.String\ decirMarca()
+comment5.params=m
+comment5.target=void\ cambiarMarca(java.lang.String)
+numComments=6

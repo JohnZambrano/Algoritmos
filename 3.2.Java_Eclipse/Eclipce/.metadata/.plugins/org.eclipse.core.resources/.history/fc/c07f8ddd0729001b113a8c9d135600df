@@ -1,0 +1,169 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class pTiempoCompleto extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField txtIdFuncionario;
+	private JTextField txtNombres;
+	private JTextField txtApellidos;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			pTiempoCompleto dialog = new pTiempoCompleto();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public pTiempoCompleto() {
+		setTitle("Profesores Tiempo Completo");
+		setBounds(100, 100, 835, 496);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		{
+			JPanel panel = new JPanel();
+			panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+			panel.setBounds(10, 11, 799, 131);
+			contentPanel.add(panel);
+			panel.setLayout(null);
+			{
+				JLabel lblIdFuncionario = new JLabel("Id Funcionario");
+				lblIdFuncionario.setBounds(35, 23, 90, 14);
+				panel.add(lblIdFuncionario);
+			}
+			{
+				JLabel lblNombres = new JLabel("Nombres");
+				lblNombres.setBounds(176, 23, 90, 14);
+				panel.add(lblNombres);
+			}
+			{
+				JLabel lblApellidos = new JLabel("Apellidos");
+				lblApellidos.setBounds(365, 23, 90, 14);
+				panel.add(lblApellidos);
+			}
+			{
+				JLabel lblGenero = new JLabel("Genero");
+				lblGenero.setBounds(544, 23, 90, 14);
+				panel.add(lblGenero);
+			}
+			{
+				txtIdFuncionario = new JTextField();
+				txtIdFuncionario.setBounds(35, 48, 86, 20);
+				panel.add(txtIdFuncionario);
+				txtIdFuncionario.setColumns(10);
+			}
+			{
+				txtNombres = new JTextField();
+				txtNombres.setColumns(10);
+				txtNombres.setBounds(176, 48, 140, 20);
+				panel.add(txtNombres);
+			}
+			{
+				txtApellidos = new JTextField();
+				txtApellidos.setColumns(10);
+				txtApellidos.setBounds(365, 48, 140, 20);
+				panel.add(txtApellidos);
+			}
+			{
+				JComboBox cmbGenero = new JComboBox();
+				cmbGenero.setBounds(544, 48, 90, 22);
+				panel.add(cmbGenero);
+			}
+			
+			JLabel lblTipoDeContrato = new JLabel("Tipo De Contrato");
+			lblTipoDeContrato.setBounds(35, 79, 90, 14);
+			panel.add(lblTipoDeContrato);
+			
+			JRadioButton optAuxiliar = new JRadioButton("Auxiliar");
+			optAuxiliar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					
+					
+					
+				}
+			});
+			buttonGroup.add(optAuxiliar);
+			optAuxiliar.setBounds(35, 100, 109, 23);
+			panel.add(optAuxiliar);
+			
+			JRadioButton optAsistente = new JRadioButton("Asistente");
+			buttonGroup.add(optAsistente);
+			optAsistente.setBounds(175, 100, 109, 23);
+			panel.add(optAsistente);
+			
+			JRadioButton optAsociado = new JRadioButton("Asociado");
+			buttonGroup.add(optAsociado);
+			optAsociado.setBounds(309, 100, 109, 23);
+			panel.add(optAsociado);
+			
+			JRadioButton optTitular = new JRadioButton("Titular");
+			buttonGroup.add(optTitular);
+			optTitular.setBounds(449, 100, 109, 23);
+			panel.add(optTitular);
+			
+			JButton btnCalcular = new JButton("Calcular");
+			btnCalcular.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					TiempoCompleto profesor = new TiempoCompleto();
+					
+					double puntos=0;
+					double valorDevengado=0;
+					double eps=0;
+					
+					if(optAuxiliar.isSelected()) {
+						puntos=178;
+					}
+					if(optAsistente.isSelected()) {
+						puntos=200;
+					}
+					if(optAsociado.isSelected()) {
+						puntos=300;
+					}
+					if(optTitular.isSelected()) {
+						puntos=400;
+					}
+					
+					valorDevengado=14938*puntos;
+					
+					
+					
+					
+				}
+			});
+			btnCalcular.setBounds(587, 100, 89, 23);
+			panel.add(btnCalcular);
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+		}
+	}
+}

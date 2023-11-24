@@ -1,0 +1,95 @@
+import java.io.*;
+import javax.swing.JOptionPane;
+
+public class ListadoTelefono {
+    private DataInputStream entrada;
+    private DataOutputStream salida;
+    
+    public void AbrirArchivoEscribir() {
+    	try {
+    		salida = new DataOutputStream(new FileOutputStream("directorio.dat",true));
+    	}catch(IOException ex) {
+    		JOptionPane.showMessageDialog(null, "Error al abrir el archivo", "Directorio Telefonico",JOptionPane.ERROR_MESSAGE);
+    		System.exit(1);
+    	}
+    }
+    
+    public void abrirArchivoLectura() {
+    	try {
+    		entrada = new DataInputStream(new FileInputStream("directorio.dat"));
+    	}catch(IOException ex) {
+    		JOptionPane.showMessageDialog(null, "Error al abrir el archivo", "Directorio Telefonico",JOptionPane.ERROR_MESSAGE);
+    		System.exit(1);
+    	}
+    }
+    
+    public void cerrarArchivo() {
+    	try {
+    		if(entrada != null)
+    			entrada.close();
+    		if(salida != null)
+    			salida.close();
+    	}catch(IOException ex) {
+    		JOptionPane.showMessageDialog(null, "Error en el Cierre", "Directorio Telefonico",JOptionPane.ERROR_MESSAGE);
+    		System.exit(1);
+    	}
+    }
+    
+    public void agregarRegistro(Persona registro) {
+    	try {
+    		salida.writeUTF(registro.getNombre());
+    		salida.writeUTF(registro.getDireccion());
+    		salida.writeLong(registro.getTelefono());
+    	}catch(IOException ex){
+    		JOptionPane.showMessageDialog(null, "No se permitio el registro", "Directorio Telefonico",JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    public Persona leerRegistro(String nombreAux) {
+    	String nombre, direccion;
+    	long telefono = 0;
+    	try {
+    		do {
+    			nombre = entrada.readUTF();
+    			direccion = entrada.readUTF();
+    			if(nombreAux.equals(nombre)) {
+    				Persona registro = new Persona(nombre, direccion, telefono);
+    				return registro;
+    			}
+    		  }while(true);	
+    		}catch(IOException ex){
+    				JOptionPane.showMessageDialog(null, "No se permitio encontrar el elemento", "Directorio Telefonico",JOptionPane.ERROR_MESSAGE);
+    				return null;
+    		}
+         }
+    
+    public Persona buscarRegistro(String nombre) {
+    	Persona registro;
+    	registro = leerRegistro(nombre);
+    	if(registro.getNombre().equals(nombre))
+    		return registro;
+    	
+    	return null;
+    }
+    
+    public String listado() {
+    	String reporte = "";
+    	String nombre, direccion;
+    	long telefono;
+    	try {
+    		do {
+    			nombre = entrada.readUTF();
+    			direccion = entrada.readUTF();
+    			telefono = entrada.readLong();
+    			Persona registro = new Persona(nombre, direccion,telefono);
+    			reporte += registro.estado();	
+    			
+    		}while(true);
+    	}catch(IOException ex) {
+    		reporte += "Fin del listado";
+    	}
+    	return reporte;
+    }
+    	
+    
+}

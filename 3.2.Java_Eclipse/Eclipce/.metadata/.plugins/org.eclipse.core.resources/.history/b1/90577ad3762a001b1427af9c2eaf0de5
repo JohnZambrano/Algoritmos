@@ -1,0 +1,280 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.AbstractButton;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class pOcacionales extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField txtIdFuncionario;
+	private JTextField txtNombres;
+	private JTextField txtApellidos;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	
+	
+	//----------------------------------------------------------------
+	
+	final static int N=10;
+	int i=0;
+	Ocacionales[] docente = new Ocacionales[N];
+	//ArrayList<TiempoCompleto> datosProfesoresTiempoCompleto= new ArrayList<TiempoCompleto>();
+	
+	
+	private JTextField txtMesesContrato;
+	private JTextField txtValorContrato;
+	
+	private JTable table;
+	private JTable tabla;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			pOcacionales dialog = new pOcacionales();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public pOcacionales() {
+		setTitle("Profesores Ocacionales");
+		setBounds(100, 100, 851, 477);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		{
+			JPanel panel = new JPanel();
+			panel.setBounds(10, 10, 799, 131);
+			panel.setBackground(new Color(220, 220, 220));
+			panel.setLayout(null);
+			panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+			contentPanel.add(panel);
+			{
+				JLabel lblIdFuncionario = new JLabel("Id Funcionario");
+				lblIdFuncionario.setBounds(35, 23, 90, 14);
+				panel.add(lblIdFuncionario);
+			}
+			{
+				JLabel lblNombres = new JLabel("Nombres");
+				lblNombres.setBounds(176, 23, 90, 14);
+				panel.add(lblNombres);
+			}
+			{
+				JLabel lblApellidos = new JLabel("Apellidos");
+				lblApellidos.setBounds(365, 23, 90, 14);
+				panel.add(lblApellidos);
+			}
+			{
+				JLabel lblGenero = new JLabel("Genero");
+				lblGenero.setBounds(545, 23, 90, 14);
+				panel.add(lblGenero);
+			}
+			{
+				txtIdFuncionario = new JTextField();
+				txtIdFuncionario.setColumns(10);
+				txtIdFuncionario.setBounds(35, 48, 86, 20);
+				panel.add(txtIdFuncionario);
+			}
+			{
+				txtNombres = new JTextField();
+				txtNombres.setColumns(10);
+				txtNombres.setBounds(176, 48, 140, 20);
+				panel.add(txtNombres);
+			}
+			{
+				txtApellidos = new JTextField();
+				txtApellidos.setColumns(10);
+				txtApellidos.setBounds(365, 48, 140, 20);
+				panel.add(txtApellidos);
+			}
+			{
+				JComboBox cmbGenero = new JComboBox();
+				cmbGenero.setModel(new DefaultComboBoxModel(new String[] {"M", "F"}));
+				cmbGenero.setBounds(545, 47, 109, 22);
+				panel.add(cmbGenero);
+			}
+			{
+				JLabel lblValorContrato = new JLabel("Valor Contrato");
+				lblValorContrato.setBounds(35, 79, 90, 14);
+				panel.add(lblValorContrato);
+			}
+			{
+				textField_4 = new JTextField();
+				textField_4.setBounds(35, 96, 90, 20);
+				panel.add(textField_4);
+				textField_4.setColumns(10);
+			}
+			{
+				textField_5 = new JTextField();
+				textField_5.setBounds(176, 96, 140, 20);
+				panel.add(textField_5);
+				textField_5.setColumns(10);
+			}
+			{
+				JLabel lblDuracionEnMeses = new JLabel("Duraci\u00F3n En Meses");
+				lblDuracionEnMeses.setBounds(176, 79, 116, 14);
+				panel.add(lblDuracionEnMeses);
+			}
+			
+			JButton btnCalcular = new JButton("Calcular");
+			btnCalcular.addActionListener(new ActionListener() {
+			//----------------------------------------------------------
+				
+				
+				public void actionPerformed(ActionEvent arg0) {
+					
+					double valorDevengado=0;
+					double eps=0;
+					double pension=0;
+					
+					int idFuncionario = Integer.parseInt(txtIdFuncionario.getText());
+					String nombres = txtNombres.getText();
+					String apellidos = txtApellidos.getText();
+					char genero = 'm'; 
+					double valorContrato = Double.parseDouble(txtValorContrato.getText());
+					int mesesContrato= Integer.parseInt(txtMesesContrato.getText());
+					String areaFormacion = txtAreaFormacion.getText();
+					String tituloProfesional=txttituloProfesional.getText();
+					
+					double salarioBase = 0;
+					salarioBase = docente[i].calcularSueldo(valorContrato, mesesContrato);
+					eps= docente[i].calcularEPS(salarioBase);
+					pension = docente[i].calcularPension(salarioBase);
+					salarioBase = salarioBase-eps-pension;
+					
+					docente[i] = new Ocacionales(idFuncionario,nombres,apellidos,genero, valorContrato,mesesContrato,areaFormacion,tituloProfesional,salarioBase);
+					
+					tabla.setValueAt(docente[i].getFuncionario(),i, 0);
+					tabla.setValueAt(docente[i].getNombres(),i, 1);
+					tabla.setValueAt(docente[i].getApellidos(),i, 2);
+					tabla.setValueAt(docente[i].getGenero(),i, 3);
+					tabla.setValueAt(docente[i].getValorContrato(),i, 4);
+					tabla.setValueAt(docente[i].getMesesContrato(),i, 5);
+					tabla.setValueAt(docente[i].getAreaFormacion(),i, 6);
+					tabla.setValueAt(docente[i].getTituloProfesional(),i, 7);
+					tabla.setValueAt(docente[i].getSalarioBase(),i, 8);
+					
+					tabla.setValueAt(eps,i, 9);
+					tabla.setValueAt(pension,i, 10);
+														
+					i++;	
+				}
+
+			});
+			btnCalcular.setForeground(Color.BLACK);
+			btnCalcular.setBackground(new Color(95, 158, 160));
+			btnCalcular.setBounds(680, 67, 109, 39);
+			panel.add(btnCalcular);
+			
+			JLabel lblAreaFormacion = new JLabel("Area Formaci\u00F3n");
+			lblAreaFormacion.setBounds(365, 79, 90, 14);
+			panel.add(lblAreaFormacion);
+			
+			textField = new JTextField();
+			textField.setBounds(365, 96, 140, 20);
+			panel.add(textField);
+			textField.setColumns(10);
+			
+			JLabel lblTituloProfecional = new JLabel("Titulo Profecional");
+			lblTituloProfecional.setBounds(545, 80, 109, 14);
+			panel.add(lblTituloProfecional);
+			
+			textField_1 = new JTextField();
+			textField_1.setBounds(545, 96, 109, 20);
+			panel.add(textField_1);
+			textField_1.setColumns(10);
+		}
+		
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(10, 152, 799, 275);
+		panel1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel1.setBackground(new Color(128, 128, 128));
+		contentPanel.add(panel1);
+		panel1.setLayout(new BorderLayout(0, 0));
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			panel1.add(scrollPane, BorderLayout.CENTER);
+			
+			tabla = new JTable();
+			tabla.setModel(new DefaultTableModel(
+				new Object[][] {
+					{null, null, null, "", "", null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+				},
+				new String[] {
+					"Id Funcionario", "Nombres", "Apellidos", "Genero", "Valor Contrato", "Duraci\u00F3n En Meses", "Salario Base", "Eps", "Pensi\u00F3n"
+				}
+			) {
+				Class[] columnTypes = new Class[] {
+					String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class, Object.class
+				};
+				public Class getColumnClass(int columnIndex) {
+					return columnTypes[columnIndex];
+				}
+			});
+			tabla.setBorder(new EmptyBorder(0, 0, 0, 0));
+			scrollPane.setViewportView(tabla);
+			
+			table = new JTable();
+			table.setModel(new DefaultTableModel(
+				new Object[][] {
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null},
+				},
+				new String[] {
+					"Id Funcionario", "Nombres", "Apellidos", "Genero", "Salario Base", "Valor contrato", "Duraci\u00F3n En Meses", "Eps", "Pensi\u00F3n"
+				}
+			) {
+				Class[] columnTypes = new Class[] {
+					String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class
+				};
+				public Class getColumnClass(int columnIndex) {
+					return columnTypes[columnIndex];
+				}
+			});
+		}
+	}
+}

@@ -1,0 +1,27 @@
+Proceso Estatura
+	
+	//Ejemplo 4.5
+	//Se requiere un algoritmo para obtener la estatura promedio de un grupo de personas, 
+	//cuyo número de miembros se desconoce, 
+	//el ciclo debe efectuarse siempre y cuando se tenga una estatura registrada.
+	s<-0;
+	c<-0;
+	Escribir "ingrese la estatura en metros :";
+	Leer est;
+	Mientras est>0 Hacer
+		s<-s+est;
+		Escribir  "ingrese la estatura en metros:";
+		Leer est;
+		c<-c+1;
+		
+	FinMientras
+	Si c>0 Entonces
+		prom<-s/c;
+	Sino
+		Escribir " No hay estatura registrada";
+	FinSi
+	Escribir "el promedio es:  ",prom;
+	
+	
+	
+FinProceso

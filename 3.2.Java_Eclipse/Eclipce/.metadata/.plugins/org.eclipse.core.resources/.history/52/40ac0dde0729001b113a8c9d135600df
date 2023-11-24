@@ -1,0 +1,60 @@
+
+public class TiempoCompleto extends Docentes{
+	
+	private String categoria;
+	private int puntos;
+	
+	
+	public TiempoCompleto(int idFuncionario, String nombres, String apellidos, char genero, double salarioBase,
+			String areaFormacion, String tituloProfesional, String categoria, int puntos) {
+		super(idFuncionario, nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		this.categoria = categoria;
+		this.puntos = puntos;
+	}
+
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+	
+	//--------------------------------------------------------------------------------------------
+	
+	public double calcularSueldo( int puntos) {
+		double pago = 0;
+		double valorPunto = 14938;
+		pago =  puntos * valorPunto ;
+		return pago;
+		
+	}
+	
+	public String mostrarDatosDocente() {
+		String cad = super.mostrarDatosDocente();
+		cad = cad +"\nTipo de categoria: "+ categoria;
+		cad = cad +"\n:Cantidad de puntos: "+ puntos;
+		return cad;
+	
+	}
+	
+	public double mostrarLiquidacion(double valorDevengado, double aporteSalud, double aportePension) {
+		double pagoNeto = 0;
+		pagoNeto = valorDevengado-aporteSalud-aportePension;
+		return pagoNeto;
+	}
+	
+	
+}

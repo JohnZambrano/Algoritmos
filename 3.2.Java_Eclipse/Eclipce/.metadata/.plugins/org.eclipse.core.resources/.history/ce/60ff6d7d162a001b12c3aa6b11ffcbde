@@ -1,0 +1,125 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JRadioButton;
+import javax.swing.DefaultComboBoxModel;
+
+public class pHoraCatedra extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField txtIdFuncionario;
+	private JTextField txtNombres;
+	private JTextField txtApellidos;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			pHoraCatedra dialog = new pHoraCatedra();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public pHoraCatedra() {
+		setTitle("Profesores Hora C\u00E1tedra");
+		setBounds(100, 100, 849, 494);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel.setBounds(10, 11, 813, 142);
+		contentPanel.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblIdFuncionario = new JLabel("Id Funcionario");
+		lblIdFuncionario.setBounds(34, 26, 90, 14);
+		panel.add(lblIdFuncionario);
+		
+		JLabel lblNombres = new JLabel("Nombres");
+		lblNombres.setBounds(172, 26, 90, 14);
+		panel.add(lblNombres);
+		
+		txtIdFuncionario = new JTextField();
+		txtIdFuncionario.setBounds(34, 51, 86, 20);
+		panel.add(txtIdFuncionario);
+		txtIdFuncionario.setColumns(10);
+		
+		txtNombres = new JTextField();
+		txtNombres.setBounds(172, 51, 140, 20);
+		panel.add(txtNombres);
+		txtNombres.setColumns(10);
+		
+		JLabel lblApellidos = new JLabel("Apellidos");
+		lblApellidos.setBounds(351, 26, 90, 14);
+		panel.add(lblApellidos);
+		
+		txtApellidos = new JTextField();
+		txtApellidos.setBounds(351, 51, 140, 20);
+		panel.add(txtApellidos);
+		txtApellidos.setColumns(10);
+		
+		JLabel lblGenero = new JLabel("Genero");
+		lblGenero.setBounds(536, 26, 90, 14);
+		panel.add(lblGenero);
+		
+		JComboBox cmbGenero = new JComboBox();
+		cmbGenero.setModel(new DefaultComboBoxModel(new String[] {"Masculino", "Femenino"}));
+		cmbGenero.setBounds(536, 50, 90, 22);
+		panel.add(cmbGenero);
+		
+		JLabel lblTipoDeContrato = new JLabel("Tipo De Contrato");
+		lblTipoDeContrato.setBounds(34, 78, 90, 14);
+		panel.add(lblTipoDeContrato);
+		
+		JRadioButton optAuxiliar = new JRadioButton("Auxiliar");
+		optAuxiliar.setBounds(34, 99, 86, 23);
+		panel.add(optAuxiliar);
+		
+		JRadioButton optAsistente = new JRadioButton("Asistente");
+		optAsistente.setBounds(138, 99, 86, 23);
+		panel.add(optAsistente);
+		
+		JRadioButton optTitular = new JRadioButton("Titular");
+		optTitular.setBounds(242, 99, 70, 23);
+		panel.add(optTitular);
+		
+		JLabel lblHorasSemanales = new JLabel("Horas Semanales");
+		lblHorasSemanales.setBounds(363, 103, 101, 14);
+		panel.add(lblHorasSemanales);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(474, 100, 86, 20);
+		panel.add(textField);
+		
+		JLabel lblMesesContratados = new JLabel("Meses Contratados");
+		lblMesesContratados.setBounds(592, 103, 115, 14);
+		panel.add(lblMesesContratados);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(717, 100, 86, 20);
+		panel.add(textField_1);
+	}
+
+}

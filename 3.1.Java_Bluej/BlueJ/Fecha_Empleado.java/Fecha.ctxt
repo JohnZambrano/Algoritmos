@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Fecha
+comment1.params=d\ m\ a
+comment1.target=Fecha(int,\ int,\ int)
+comment2.params=
+comment2.target=Fecha()
+comment3.params=
+comment3.target=int\ getDia()
+comment4.params=
+comment4.target=int\ getMes()
+comment5.params=
+comment5.target=int\ getA\u00F1o()
+comment6.params=
+comment6.target=void\ inicializarHoy()
+comment7.params=fecha
+comment7.target=int\ darDiferenciaEnMeses(Fecha)
+comment8.params=
+comment8.target=java.lang.String\ formatoCadena()
+numComments=9

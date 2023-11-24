@@ -1,0 +1,30 @@
+Proceso Calificacion
+	N<-1;
+	Mientras n<0 Hacer
+		Escribir "ingrese un numero";
+		Leer n;
+	FinMientras
+	N<-11;
+	Mientras n>10 Hacer
+		Escribir "ingrese un numero";
+		Leer n;
+	FinMientras
+	
+	Si n==10 Entonces
+		Escribir "la calificacion es A";
+	Sino
+		Si n==9 Entonces
+			Escribir "la calificacion es B";
+		Sino
+			Si n==8 Entonces
+				Escribir "la calificacion es C";
+			Sino
+				Si (n==7)O(n==6) Entonces
+					Escribir "la calificacion es D";
+				Sino
+					Escribir "la calificacion es F";
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+FinProceso

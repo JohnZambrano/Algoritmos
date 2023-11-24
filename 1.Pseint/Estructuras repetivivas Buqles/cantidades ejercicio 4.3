@@ -1,0 +1,32 @@
+Proceso algoritmo
+	//4.3  Se requiere un algoritmo para determinar, de N cantidades,
+	//cuántas son cero, cuántas son menores a cero, y cuántas son mayores a cero. 
+	cc<-0;
+	cm<-0;
+	cmn<-0;
+	
+	Escribir "Ingrese el numero de cantidades a ingresar: ";
+	Leer nc;
+	
+	Para i<-1 Hasta nc Con Paso 1 Hacer
+		Escribir "Ingrese una cantidad numerica: ";
+		Leer n;
+		
+		Si n==0 Entonces
+			cc<-cc+1;
+		Sino
+			Si n>0 Entonces
+				cm<-cm+1;
+			Sino
+				Si n<0 Entonces
+					cmn<-cmn+1;
+				FinSi
+			FinSi
+		FinSi
+	FinPara
+	
+	Escribir "Las cantidades positivas son: ",cm;
+	Escribir "Las cantidades negativas son: ",cmn;
+	Escribir "Las cantidades iguales a cero son: ",cc;
+
+FinProceso

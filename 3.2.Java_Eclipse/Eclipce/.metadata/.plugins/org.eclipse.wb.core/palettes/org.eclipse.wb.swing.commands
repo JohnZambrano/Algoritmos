@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<removeEntry
+		id="org.eclipse.wb.swing.components javax.swing.JTable"/>
+	<editComponent
+		id="org.eclipse.wb.swing.components javax.swing.JList"
+		name="JList"
+		visible="true"
+		class="javax.swing.JList"/>
+	<editComponent
+		id="org.eclipse.wb.swing.components javax.swing.JTree"
+		name="JTree"
+		visible="true"
+		class="javax.swing.JTree"/>
+	<addComponent
+		id="custom_1604376203121"
+		name="JTable"
+		visible="true"
+		class="javax.swing.JTable"
+		category="org.eclipse.wb.swing.components"/>
+</commands>

@@ -1,0 +1,27 @@
+Proceso Pago
+	ss<-0;
+	Escribir "ingrese las horas trabajadas";
+	Leer ht;
+	Escribir "ingrese el pago por hora";
+	Leer ph;
+	Si (ht>=41)Y(ht<=45) Entonces
+		ph<-ph*2;
+		ss<-ht*ph;
+		Escribir "el sueldo semanal es",ss;
+	Sino
+		Si (ht>=46)Y(ht<=50) Entonces
+			ph<-ph*3;
+			ss<-ht*ph;
+			Escribir "el sueldo semanal es",ss;
+		Sino
+			Si ht>50 Entonces
+				Escribir " trabajar más de 50 horas no está permitido";
+			sino
+				ss<-ht*ph;
+				Escribir "el sueldo semanal es",ss;
+				
+			FinSi
+		FinSi
+	FinSi
+	
+FinProceso

@@ -1,0 +1,28 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class DibujoFiguras extends JFrame {
+	
+    public DibujoFiguras() {
+    	setTitle("Dibujo con figuras");
+    	setBounds(100,100,600,650);
+    	setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    
+    public void paint(Graphics g) {
+    	super.paint(g);
+    	g.setColor(Color.BLACK);
+    	g.drawOval(250,70,55,60);
+    	g.drawLine(278, 130, 278, 150);
+    	g.setColor(Color.YELLOW);
+    	g.fillRoundRect(250,150,50,70,16,16);
+    	g.drawLine(278, 130, 278, 150);
+    	
+    	
+    }
+    
+    public static void main(String[] args) {
+    	new DibujoFiguras().setVisible(true);
+    }
+    
+}

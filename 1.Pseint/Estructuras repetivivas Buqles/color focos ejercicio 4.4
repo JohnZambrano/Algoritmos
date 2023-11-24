@@ -1,0 +1,33 @@
+Proceso algoritmo
+	//4.4 Una compañía fabrica focos de colores (verdes, blancos y rojos).
+	//Se desea contabilizar,de un lote de N focos, 
+	//el número de focos de cada color que hay en existencia.
+	fv<-0;
+	fb<-0;
+	fr<-0;
+	
+	Escribir " Ingrese la cantidad de focos a contabilizar: ";
+	Leer cf;
+	
+	Para i<-1 Hasta cf Con Paso 1 Hacer
+		
+		Escribir "Ingrese el color del foco: ";
+		Escribir "verde=1, blanco=2, rojo=3";
+		Leer cl;
+		
+		Si cl==1 Entonces
+			fv<-fv+1;
+		Sino
+			Si cl==2 Entonces
+				fb<-fb+1;
+			Sino
+				Si fr==3 Entonces
+					fr<-fr+1;
+				FinSi
+			FinSi
+		FinSi
+	FinPara
+	Escribir "La cantidad de focos verdes es: ",fv;
+	Escribir "La cantidad de focos blancos es: ",fb;
+	Escribir "La cantidad de focos rojos es : ",fr;
+FinProceso

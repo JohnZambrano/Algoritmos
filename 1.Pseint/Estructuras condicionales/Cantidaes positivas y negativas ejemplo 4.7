@@ -1,0 +1,18 @@
+Proceso Cantidades
+	cn<-0;
+	cp<-0;
+	Escribir "ingrese la cantidad de veces que desea repetir";
+	Leer nu;
+	
+	Para i<-1 Hasta nu Con Paso 1 Hacer
+		Escribir "ingrese el numero para verificar si es negativo o positivo ";
+		Leer n;
+		Si n>0 Entonces
+			cp<-cp+1;
+		Sino
+			cn<-cn+1;
+		FinSi
+	FinPara
+	Escribir "las cantidades positivas son",cp;
+	Escribir "las cantidades negativas son",cn;
+FinProceso

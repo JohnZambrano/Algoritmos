@@ -1,0 +1,38 @@
+Proceso Quedestinopuedotomar
+	k<-0;
+	Mientras k<750 Hacer
+		Escribir "tiene que ingresar una cantidad de kilometros mayor o igual a750";
+		
+		Escribir "ingrese los kilometros por recorrer ";
+		Leer k;
+	FinMientras
+	cp<-0;
+	Escribir "ingrese el costo por kilometro";
+	Leer ck;
+	cp<-(ck*k)*2;
+	Escribir "el costo del pasaje ida y vuelta es ",cp;
+	
+	Escribir "ingrese la cantidad de dinero disponible";
+	Leer dd;
+	Si dd>=cp Entonces
+		Si (k>=750)Y(k<800) Entonces
+			Escribir " puede ir de vacaciones a Mexico";
+		Sino
+			Si (k>=800)Y(k<1200)Entonces
+				Escribir "puede ir de vacaciones a Pueblo Viejo";
+			Sino
+				Si (k>=1200)Y(k<1800) Entonces
+					Escribir "  puede ir de vacaciones a Acapulco";
+				Sino
+					Si k>=1800 Entonces
+						Escribir " puede ir de vacaciones a Cancun" ;
+					Sino
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	Sino
+		Escribir "recursos insuficientes me quedo en casa";
+	FinSi
+	
+FinProceso

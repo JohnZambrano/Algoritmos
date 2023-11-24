@@ -1,0 +1,38 @@
+//ejerciccio 3.7
+Proceso Becasuniversitarias
+	Escribir "ingrese la edad del alumno";
+	Leer ea;
+	Escribir "ingrese el promedio del alumno";
+	Leer prom;
+	Si ea>18 Entonces
+		Si prom>=9 Entonces
+			Escribir "se le asigna una beca de",2000;
+		Sino
+			Si (prom>=7.5)Y(prom<9)Entonces
+				escribir "se le asigana una beca de",1000;
+			Sino
+				Si (prom<7.5)Y(prom>=6) Entonces
+					Escribir "se le asigna una beca de",500;
+				Sino
+					Escribir "invitamos al estudiante a estudiar mas";
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	Si ea<=18 Entonces
+		Si prom>=9 Entonces
+			Escribir "se le asigna una beca de",3000;
+		Sino
+			Si (prom<9)Y(prom>=8) Entonces
+				Escribir "se le asigna una beca de",2000;
+			Sino
+				Si (prom<8)Y(prom>=6) Entonces
+					Escribir "se le asigna una beca de",100;
+				Sino
+					Escribir "invitamos al estudiante a estudiar mas" ;
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+FinProceso

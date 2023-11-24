@@ -1,0 +1,26 @@
+Proceso Salario
+	
+	//4.1 Un profesor tiene un salario inicial de $1500, y recibe un incremento de 10 % anual durante 6 años.
+	//¿Cuál es su salario al cabo de 6 años? ¿Qué salario ha recibido en cada uno de los 6 años? 
+	//Realice el algoritmo y represente la solución mediante el diagrama de flujo, el pseudocódigo 
+	Escribir " El numero de años en los cuales recive aumento son: 6";
+	a<-6;
+	
+	Escribir " El salario iniciala es: 1500";
+	sli<-1500;
+	
+	sf<-0;
+	sa<-0;
+	inc<-0;
+	
+	Para i<-1 Hasta a Con Paso 1 Hacer
+		inc<-sli*0.1;
+		sa<-sa+inc;
+		
+		Escribir " El salario del año: ",i,"es",sa+1500;
+		
+		sf<-sli+sa;
+		
+	FinPara
+	Escribir " El salario final es: ",sf;
+FinProceso

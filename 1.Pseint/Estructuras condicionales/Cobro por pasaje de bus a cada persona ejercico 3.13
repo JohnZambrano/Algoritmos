@@ -1,0 +1,22 @@
+Proceso Costopasaje
+	cp<-0;
+	Escribir "ingrese el numero de alumnos que abordaran el bus";
+	Leer na;
+	Si na>100 Entonces
+		tf<-20;
+	Sino
+		Si (na>=50)Y(na<=100) Entonces
+			tf<-35;
+		Sino
+			Si (na>=20)Y(na<=49) Entonces
+				tf<-40;
+			Sino
+				tf<-60;
+			FinSi
+		FinSi
+	FinSi
+	cp<-tf;
+	Escribir " el costo del pasje para cada alumno es",cp;
+	
+	
+FinProceso

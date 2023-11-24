@@ -1,0 +1,39 @@
+
+public class TiempoCompleto extends Docentes{
+	
+	protected String categoria;
+	protected int puntos;
+	
+	
+	public TiempoCompleto(int funcionario, String nombres, String apellidos, char genero, double salarioBase,
+			String areaFormacion, String tituloProfesional,String categoria, int puntos) {
+		super(funcionario, nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		this.categoria=categoria;
+		this.puntos=puntos;
+	}
+
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+
+	
+	
+	
+	
+}

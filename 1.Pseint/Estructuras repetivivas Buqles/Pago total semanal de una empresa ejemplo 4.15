@@ -1,0 +1,32 @@
+Proceso trabajadores
+	// Ejemplo 4.15 ciclos anidados
+	
+	sh<-0; //Se iguala a cero la suma de horas trabajadas semanalmente
+	ss<-0; //Se iguala a cero el sueldo semanal
+	tot<-0;
+	escribir "Ingrese el numero de trabajadorese de la empresa: ";
+	leer trab;
+	
+	// Este es el ciclo de trabajadores
+	
+	Para i<-1 Hasta trab Con Paso 1 Hacer
+		escribir "Igrese los dias laborados del trabajador ",i;
+		leer dl;
+		
+		escribir "Ingrese el pago por  hora del trabajador ",i;
+		leer ph;
+		
+		// Este es el ciclo de dias laborados
+		
+		Para j<-1 Hasta dl Con Paso 1 Hacer
+			escribir " Ingrese las horas trabajadas del empleado: ",i," En el dia ",j;
+			leer ht;
+			sh<-sh+ht;
+		FinPara
+		ss<-sh*ph;
+		escribir "El sueldo del trabajador",i," es ",ss;
+		tot<-tot+ss;
+	FinPara
+	escribir "El sueldo total semanal que paga la empresa es: ",tot;
+	
+FinProceso

@@ -1,0 +1,26 @@
+//Ejemplo 4.11
+//Una persona se encuentra en el kilómetro 70 de la carretera AguascalientesZacatecas,
+//otra se encuentra en el km 150 de la misma carretera, la primera viaja en dirección a Zacatecas,
+//mientras que la segunda se dirige a Aguascalientes, a la misma velocidad. 
+//Realice un algoritmo para determinar en qué kilometro de esa carretera se encontrarán.
+//Represéntelo mediante el diagrama de flujo,Y  el pseudocódigo .
+
+Proceso KM
+	Escribir "el primer punto inicia en el km 70 de Zacatecas a aguas Calientes ";
+	ka<-70;
+	Escribir "el segundo punto inicia en el km 150 de Aguas Calientes a Zacatecas ";
+	kb<-150;
+	r<-kb-ka;
+	Mientras r>0 Hacer
+		ka<-ka+1;
+		kb<-kb-1;
+		r<-kb-ka;
+	FinMientras
+	Si r=0 Entonces
+		ka<-kb;
+	Sino
+		ka<-ka-0.5;
+	FinSi
+	Escribir  "el punto de encuentro entre los dos automoviles es el km ",ka;
+FinProceso
+ 

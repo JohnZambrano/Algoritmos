@@ -1,0 +1,43 @@
+
+public class HoraCatedra extends Docentes{
+	
+	protected int numeroHoras;
+	protected int numeroMeses;
+	protected String categoria;
+		
+	public HoraCatedra(int funcionario, String nombres, String apellidos, char genero, double salarioBase,
+			String areaFormacion, String tituloProfesional, int numeroHoras, int numeroMeses, String categoria) {
+		super(funcionario, nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		this.numeroHoras = numeroHoras;
+		this.numeroMeses = numeroMeses;
+		this.categoria = categoria;
+	}
+
+	public int getNumeroHoras() {
+		return numeroHoras;
+	}
+
+	public void setNumeroHoras(int numeroHoras) {
+		this.numeroHoras = numeroHoras;
+	}
+
+	public int getNumeroMeses() {
+		return numeroMeses;
+	}
+
+	public void setNumeroMeses(int numeroMeses) {
+		this.numeroMeses = numeroMeses;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
+	
+	
+		
+}

@@ -1,0 +1,96 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.EtchedBorder;
+
+public class VentanaPrincipall extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipall frame = new VentanaPrincipall();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipall() {
+		setBackground(Color.GRAY);
+		setForeground(Color.GRAY);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipall.class.getResource("/ImagenesVehiculos/Registro Vehiculos2020-11-26 165705.png")));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 600);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Vehiculos");
+		mnNewMenu.setBackground(new Color(255, 255, 255));
+		menuBar.add(mnNewMenu);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(220, 220, 220));
+		setBounds(0, 0, 800, 600);
+		contentPane.setBorder(new EmptyBorder(2, 2, 2, 2));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JDesktopPane escritorio = new JDesktopPane();
+		escritorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.WHITE, Color.GRAY));
+		escritorio.setBackground(new Color(230, 230, 250));
+		escritorio.setBounds(28, 80, 700, 400);
+		contentPane.add(escritorio);
+		escritorio.setLayout(null);
+		
+		JMenuItem mnuRegistro = new JMenuItem("Registro");
+		mnuRegistro.addActionListener(new ActionListener() {
+			//------------------------------------------------------
+			public void actionPerformed(ActionEvent arg0) {
+				VentanaRegistro vRegistro = new VentanaRegistro();
+				escritorio.add(vRegistro);
+				vRegistro.reshape(0,0,700,400);
+				vRegistro.show();
+			}
+		});
+		mnuRegistro.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_MASK));
+		mnNewMenu.add(mnuRegistro);
+		
+		JMenu mnNewMenu_1 = new JMenu("Ayuda");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenuItem mnuAcerca = new JMenuItem("Acerca");
+		mnuAcerca.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
+		mnNewMenu_1.add(mnuAcerca);
+		
+		JMenuItem mnuSalir = new JMenuItem("Salir");
+		mnuSalir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+		mnNewMenu_1.add(mnuSalir);
+		
+		
+	}
+}

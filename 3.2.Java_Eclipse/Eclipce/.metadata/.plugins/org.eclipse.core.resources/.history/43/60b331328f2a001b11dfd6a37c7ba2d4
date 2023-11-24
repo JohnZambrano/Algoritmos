@@ -1,0 +1,60 @@
+
+public class RaicesEcuacion {
+	private double a;
+	private double b;
+	private double c;
+	private double r1;
+	private double r2;
+	public RaicesEcuacion(double a, double b, double c, double r1, double r2) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+		this.r1 = r1;
+		this.r2 = r2;
+	}
+	public double getA() {
+		return a;
+	}
+	public void setA(double a) {
+		this.a = a;
+	}
+	public double getB() {
+		return b;
+	}
+	public void setB(double b) {
+		this.b = b;
+	}
+	public double getC() {
+		return c;
+	}
+	public void setC(double c) {
+		this.c = c;
+	}
+	public double getR1() {
+		return r1;
+	}
+	public void setR1(double r1) {
+		this.r1 = r1;
+	}
+	public double getR2() {
+		return r2;
+	}
+	public void setR2(double r2) {
+		this.r2 = r2;
+	}
+	
+	public void raices() {
+		double discr;
+		if(b*b<4*a*c)
+			throw new ArithmeticException("Discriminante negativo");
+		if(a == 0)
+			throw new IllegalArgumentException("Coeficiente x^2 no puede ser cero");
+		discr = Math.sqrt(b*b-4*a*c);
+		r1 = (-b - discr)/(2*a);
+		r2 = (-b + discr)/(2*a);
+	}
+	public String escribir(){
+		return String.format("x1 = %.2f x2= %.2f",r1,r2);
+		
+	}
+}

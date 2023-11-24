@@ -1,0 +1,19 @@
+Proceso Bonoaunprofesor
+	//Puede ingresar una puntuacion de o a 100//
+	Escribir "ingrese la puntuacion";
+	Leer p;
+	Si (p>=0)Y(p<=100) Entonces
+		Escribir "tiene un bono de 1 salario minimo";
+	Sino
+		Si (p>=101)Y(p<=150) Entonces
+			Escribir "tiene un bono de 2 salarios minimos" ;
+		Sino
+			Si p>=151 Entonces
+				Escribir " tiene un bono de 3 salarios minimos";
+			Sino
+				
+			FinSi
+		FinSi
+	FinSi
+	
+FinProceso

@@ -1,0 +1,37 @@
+
+public class Docentes extends Funcionario {
+	
+	protected String areaFormacion;
+	protected String tituloProfesional;
+	
+	
+	public Docentes(int funcionario, String nombres, String apellidos, char genero, double salarioBase,	String areaFormacion, String tituloProfesional) {
+		super(funcionario, nombres, apellidos, genero, salarioBase);
+		this.areaFormacion = areaFormacion;
+		this.tituloProfesional = tituloProfesional;
+	}
+
+
+	public String getAreaFormacion() {
+		return areaFormacion;
+	}
+
+
+	public void setAreaFormacion(String areaFormacion) {
+		this.areaFormacion = areaFormacion;
+	}
+
+
+	public String getTituloProfesional() {
+		return tituloProfesional;
+	}
+
+
+	public void setTituloProfesional(String tituloProfesional) {
+		this.tituloProfesional = tituloProfesional;
+	}
+	
+		
+	
+	
+}

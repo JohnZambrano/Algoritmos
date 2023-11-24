@@ -1,0 +1,36 @@
+Proceso Bono 
+	//Ejercicio3.11
+	Escribir "ingrese la antiguedad del empleado";
+	Leer a;
+	Si a==1 Entonces
+		ba<-100;
+		Escribir "el bono por antiguedad es",ba;
+	Sino
+		Si a==2 Entonces
+			ba<-200;
+			Escribir "el bono por antiguedad es",ba;
+		Sino
+			Si a==3 Entonces
+				ba<-300;
+				Escribir "el bono por antiguedad es",ba;
+			Sino
+				Si a==4 Entonces
+					ba<-400;
+					Escribir "el bono por antiguedad es",ba;
+				Sino
+					Si a==5 Entonces
+						ba<-500;
+						Escribir "el bono por antiguedas es de",ba;
+					Sino
+						Si a>5 Entonces
+							ba<-1000;
+							Escribir "el bono por antiguedas es de",ba;
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	
+FinProceso

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Racional
+comment1.params=
+comment1.target=Racional()
+comment2.params=numerador\ denominador
+comment2.target=Racional(int,\ int)
+comment3.params=r
+comment3.target=Racional(Racional)
+comment4.params=r2
+comment4.target=Racional\ sumar(Racional)
+comment5.params=
+comment5.target=void\ mostrar()
+numComments=6

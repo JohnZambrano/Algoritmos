@@ -1,0 +1,19 @@
+Proceso Costodeunproducto
+	ct<-0;
+	Escribir "ingrese el precio del articulo";
+	Leer p;
+	Si p>=200 Entonces
+		d<-p*0.15;
+	Sino
+		Si (p>100)Y(p<200) Entonces
+			d<-p*0.12;
+		Sino
+			d<-p*0.10;
+		FinSi
+	FinSi
+	ct<-p-d;
+	Escribir "el descuento aplicado es",d;
+	Escribir "el costo total del articulo es",ct;
+	
+	
+FinProceso

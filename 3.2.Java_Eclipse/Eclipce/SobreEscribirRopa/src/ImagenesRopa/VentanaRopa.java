@@ -1,0 +1,103 @@
+package ImagenesRopa;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
+import javax.swing.JScrollPane;
+
+public class VentanaRopa extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaRopa frame = new VentanaRopa();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaRopa() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaRopa.class.getResource("/ImagenesRopa/pantalon48.png")));
+		setTitle("C\u00E1talogo de ropa");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 923, 695);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(192, 192, 192));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel.setBounds(10, 25, 813, 113);
+		panel.setBackground(new Color(100, 149, 237));
+		contentPane.add(panel);
+		
+		JDesktopPane Escritorio = new JDesktopPane();
+		Escritorio.setBounds(10, 149, 813, 453);
+		contentPane.add(Escritorio);
+		
+		JButton btnCamisetas_3 = new JButton("Camisetas");
+		btnCamisetas_3.setIcon(new ImageIcon(VentanaRopa.class.getResource("/ImagenesRopa/camiseta48.png")));
+		btnCamisetas_3.setBounds(10, 25, 148, 62);
+		btnCamisetas_3.addActionListener(new ActionListener() {
+			
+		//----------------------------------------------------------------------------------------------------
+			
+			public void actionPerformed(ActionEvent arg0) {
+				VentanaCamisetas vCamisetas = new VentanaCamisetas();
+				Escritorio.add(vCamisetas);
+				vCamisetas.reshape(0, 0, 840, 500);
+				vCamisetas.show();
+				
+			}
+		});
+		panel.setLayout(null);
+		panel.add(btnCamisetas_3);
+		
+		JButton btnPantalones = new JButton("Pantalones");
+		btnPantalones.setIcon(new ImageIcon(VentanaRopa.class.getResource("/ImagenesRopa/pantalon48.png")));
+		btnPantalones.setBounds(168, 25, 154, 62);
+		panel.add(btnPantalones);
+		
+		JButton btnCalcetines = new JButton("Calcetines");
+		btnCalcetines.setIcon(new ImageIcon(VentanaRopa.class.getResource("/ImagenesRopa/calcetines48.png")));
+		btnCalcetines.setBounds(332, 25, 148, 62);
+		panel.add(btnCalcetines);
+		
+		JButton btnAcerca = new JButton("Acerca de");
+		btnAcerca.setIcon(new ImageIcon(VentanaRopa.class.getResource("/ImagenesRopa/info.png")));
+		btnAcerca.setBounds(490, 25, 149, 62);
+		panel.add(btnAcerca);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setIcon(new ImageIcon(VentanaRopa.class.getResource("/ImagenesRopa/exit.png")));
+		btnSalir.setBounds(649, 25, 148, 62);
+		panel.add(btnSalir);
+		
+	}
+}

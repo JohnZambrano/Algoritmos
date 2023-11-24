@@ -1,0 +1,41 @@
+
+public class Ocacionales extends Docentes{
+	
+	private int mesesContrato;
+	private double valorContrato;
+	
+	
+	public Ocacionales(int funcionario, String nombres, String apellidos, char genero, double salarioBase,
+			String areaFormacion, String tituloProfesional, double valorContrato, int mesesContrato) {
+		super(funcionario, nombres, apellidos, genero, salarioBase, areaFormacion, tituloProfesional);
+		this.mesesContrato = mesesContrato;
+		this.valorContrato = valorContrato;
+	}
+
+
+	public int getMesesContrato() {
+		return mesesContrato;
+	}
+
+
+	public void setMesesContrato(int mesesContrato) {
+		this.mesesContrato = mesesContrato;
+	}
+
+
+	public double getValorContrato() {
+		return valorContrato;
+	}
+
+
+	public void setValorContrato(double valorContrato) {
+		this.valorContrato = valorContrato;
+	}
+	
+	
+	
+	
+	
+	
+		
+}
